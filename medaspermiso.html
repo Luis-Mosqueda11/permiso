@@ -6,89 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Me perdonas</title>
     <style>
-    * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .container {
-        height: 100vh;
-        background-color: #22333b;
-        color: #f2f4f3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+:root {
+    --color-primary: #121313;
+    --color-secondary: #124559;
+    --color-accent: #598392;
+    --color-tertiary: #aec3b0;
+    --color-quaternary: #eff6e0;
+}
 
-    .sub-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #a9927d;
-        width: 1200px;
-        height: auto;
-        padding: 20px;
-        border-radius: 10px 10px 0px 0px;
-    }
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-    .sub-container h1 {
-        font-size: 50px;
-        color: #fff;
-    }
+.container {
+    height: 100vh;
+    background-color: var(--color-primary);
+    color: var(--color-quaternary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    header {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
+.sub-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-tertiary);
+    width: 1200px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+}
 
-    footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1200px;
-        height: 400px;
-        position: relative;
-        background-color: #a9927d;
-        border-radius: 0px 0px 10px 10px;
-    }
+.sub-container h1 {
+    font-size: 50px;
+    color: var(--color-primary);
+}
 
-    footer > button {
-        background-color: #5e503f;
-        border: none;
-        padding: 15px 40px;
-        margin: 20px;
-        border-radius: 15px;
-        position: absolute;
-        transition: background-color 0.3s ease-in-out, left 0.3s ease, top 0.3s ease;
-    }
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
 
-    footer > button#btnSi {
-        left: 300px;
-        height: 125px;
-        width: 200px;
-        font-size: 25px;
-    }
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    height: 400px;
+    position: relative;
+    background-color: var(--color-tertiary);
+    border-radius: 0px 0px 10px 10px;
+}
 
-    footer > button#btnNo {
-        background-color: #f2f4f3;
-        right: 300px;
-        height: 125px;
-        width: 200px;
-        font-size: 25px;
-    }
+footer > button {
+    background-color: var(--color-secondary);
+    border: none;
+    padding: 15px 40px;
+    margin: 20px;
+    border-radius: 15px;
+    position: absolute;
+}
 
-    footer > button#btnSi:hover {
-        background-color: #5d5955;
-        color: #000000;
-    }
+footer > button#btnSi {
+    left: 300px;
+    height: 125px;
+    width: 200px;
+    font-size: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-quaternary);
+}
 
-    article.alert{
-    top:  50%;
+footer > button#btnNo {
+    background-color: var(--color-quaternary);
+    right: 300px;
+    height: 125px;
+    width: 200px;
+    font-size: 25px;
+}
+
+footer > button#btnSi:hover {
+    background-color: var(--color-secondary);
+    color: #000;
+}
+
+article.alert {
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -98,48 +107,76 @@
     display: flex;
 }
 
-    article.alert > div h1 {
+article.alert > div h1 {
     font-size: 50px;
-    color: #f2f4f3;
+    color: var(--color-primary);
 }
 
-    article.alert > div p {
+article.alert > div p {
     font-size: 25px;
-    color: #ffffff;
+    color: var(--color-primary);
 }
 
-article.alert > div{
+article.alert > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     font-weight: bold;
-    color: #fff;
     text-align: center;
     width: 1200px;
     height: 900px;
-    background: linear-gradient(to top, #5e503f, #a9927d, #22333b);
+    background: linear-gradient(to top, var(--color-secondary), var(--color-tertiary), var(--color-quaternary));
     border-radius: 10px;
 }
 
+.image-container {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.image-container img {
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+    /* Media Queries */
+@media (min-width: 768px) {
+    .sub-container h1 {
+        font-size: 2rem;
+    }
+
+    footer {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    footer > button {
+        font-size: 1.25rem;
+        padding: 15px 40px;
+    }
+
+    article.alert > div h1 {
+        font-size: 2rem;
+    }
+
+    article.alert > div p {
+        font-size: 1.25rem;
+    }
+
     .image-container {
-        width: 500px;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
+        max-width: 500px;
     }
-
-    .image-container img {
-        width: 500px;
-        height: 400px;
-        border-radius: 15px;
-    }
-
-    .hidden {
-        display: none;
-    }
+}
     </style>
 </head>
 <body>
