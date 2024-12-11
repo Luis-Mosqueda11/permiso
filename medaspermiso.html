@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me perdonas</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .container {
+        height: 100vh;
+        background-color: #22333b;
+        color: #f2f4f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .sub-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #a9927d;
+        width: 1200px;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .sub-container h1 {
+        font-size: 50px;
+        color: #fff;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1200px;
+        height: 400px;
+        position: relative;
+        background-color: #a9927d;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    footer > button {
+        background-color: #5e503f;
+        border: none;
+        padding: 15px 40px;
+        margin: 20px;
+        border-radius: 15px;
+        position: absolute;
+        transition: background-color 0.3s ease-in-out, left 0.3s ease, top 0.3s ease;
+    }
+
+    footer > button#btnSi {
+        left: 300px;
+        height: 125px;
+        width: 200px;
+        font-size: 25px;
+    }
+
+    footer > button#btnNo {
+        background-color: #f2f4f3;
+        right: 300px;
+        height: 125px;
+        width: 200px;
+        font-size: 25px;
+    }
+
+    footer > button#btnSi:hover {
+        background-color: #5d5955;
+        color: #000000;
+    }
+
+    article.alert{
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: -1;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+}
+
+    article.alert > div h1 {
+    font-size: 50px;
+    color: #f2f4f3;
+}
+
+    article.alert > div p {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+article.alert > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    width: 1200px;
+    height: 900px;
+    background: linear-gradient(to top, #5e503f, #a9927d, #22333b);
+    border-radius: 10px;
+}
+
+    .image-container {
+        width: 500px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .image-container img {
+        width: 500px;
+        height: 400px;
+        border-radius: 15px;
+    }
+
+    .hidden {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <main class="container">
+    <article class="sub-container" id="hidden1">
+        <header>
+        <h1>¿Me prestarías tu auto?</h1>
+        <h1>👉👈</h1>
+        <div class="image-container">
+            <img src="meperdonas.jpg" alt="gatito" />
+        </div>
+        </header>
+    </article>
+
+    <footer id="hidden2">
+        <button id="btnSi">Si, pero con mucho cuidado</button>
+        <button id="btnNo">No, ahí a la vuelta jovén</button>
+    </footer>
+    </main>
+
+    <article class="alert" id="show">
+    <div>
+        <h1>Yayyyy, Annita y yo te lo agradecemos!!!</h1>
+        <div class="image-container">
+            <img src="feli.png" alt="gatito feli" />
+        </div>
+        <p>Te amo mucho papá, gracias por apoyarme siempre</p>
+    </div>
+    </article>
+
+<script>
+    const btnSi = document.getElementById("btnSi");
+    const btnNo = document.getElementById("btnNo");
+    const HIDDEN1 = document.getElementById("hidden1");
+    const HIDDEN2 = document.getElementById("hidden2");
+    const SHOW = document.getElementById("show");
+
+    btnSi.addEventListener("click", () => {
+        HIDDEN1.classList.add("hidden");
+        HIDDEN2.classList.add("hidden");
+        SHOW.style.zIndex = "2";
+    });
+
+    btnNo.addEventListener("mouseover", () => {
+        const posX = Math.floor(Math.random() * 75); 
+        const posY = Math.floor(Math.random() * 75);
+
+        btnNo.style.left = `${posX}%`;
+        btnNo.style.top = `${posY}%`;
+    });
+</script>
+</body>
+</html>
